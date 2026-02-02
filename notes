@@ -1,0 +1,80 @@
+1  { 
+        int num = 42;
+
+        // Binary (base 2)
+        String bin = Integer.toString(num, 2);     // "101010"
+        or
+        String bin=Integer.toBinaryString(num);
+
+        // Octal (base 8)
+        String oct = Integer.toString(num, 8);     // "52"
+
+        // Decimal (base 10)
+        String dec = Integer.toString(num, 10);    // "42"
+
+        // Hexadecimal (base 16)
+        String hex = Integer.toString(num, 16);    // "2a"
+    }
+
+
+2   {
+        no. of digits in a positive number = Math.log10(num)+1 
+    }
+
+3   {
+        char ch = '7';
+        int digit = ch - '0';  // 55 - 48 = 7
+        System.out.println(digit);  // Output: 7
+
+    }
+
+
+4   {
+        use obj1.equals(obj2) to compare two objects
+
+    }
+
+
+5    {
+        What Happens When You Create an Object?
+
+        Let’s say you write:
+
+            MinStack ms = new MinStack();
+
+        Java does this internally:
+
+            1. Allocate memory for the object
+
+            2. Initialize instance variables
+
+                This includes doing stack = new Stack<>(); if you wrote that at the field level.
+
+            3. Call the constructor
+
+                Even if it’s empty, it still runs.
+
+    }
+
+6   {  
+        1 at odd place:
+        1010(10)=0xA;(since hexadecimal 0-9 & A-F)
+
+        similarly,
+        1 at even place:
+        0101(5)=0x5;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
