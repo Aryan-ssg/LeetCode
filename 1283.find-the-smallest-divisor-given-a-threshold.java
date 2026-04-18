@@ -6,34 +6,64 @@
 
 // @lc code=start
 class Solution {
+    public int revision(int[] nums,int threshold){
+
+        int n=nums.length;
+        int low=1;
+        int high=0;
+        for(int i=0;i<n;i++){
+            if(nums[i]>high){
+                high=nums[i];
+            }
+        }
+
+        while(low<high){
+            int mid=low+(high-low)/2;
+
+            int sum=0;
+            for(int i=0;i<n;i++){
+                sum+=Math.ceilDiv(nums[i], mid);
+
+            }
+            if(sum>threshold){
+                low=mid+1;
+            }else{
+                high=mid;
+            }
+        }
+
+        return low;
+
+    }
     public int smallestDivisor(int[] nums, int threshold) {
 
-        int n = nums.length;
-        int low = 1;
-        int high = 0;
+        return revision(nums,threshold);
+        // int n = nums.length;
+        // int low = 1;
+        // int high = 0;
 
-        for (int i = 0; i < n; i++) {
-            if (nums[i] > high) {
-                high = nums[i];
-            }
+        // for (int i = 0; i < n; i++) {
+        //     if (nums[i] > high) {
+        //         high = nums[i];
+        //     }
 
-        }
+        // }
 
-        while (low < high) {
-            int mid = low + (high - low) / 2;
-            int sum = 0;
-            for (int i = 0; i < n; i++) {
-                sum += Math.ceilDiv(nums[i], mid);
+        // while (low < high) {
+        //     int mid = low + (high - low) / 2;
+        //     int sum = 0;
+        //     for (int i = 0; i < n; i++) {
+        //         sum += Math.ceilDiv(nums[i], mid);
 
-            }
-            if (sum > threshold) {
-                low = mid + 1;
+        //     }
+        //     if (sum > threshold) {
+        //         low = mid + 1;
 
-            } else {
-                high = mid;
-            }
-        }
-        return low;
+        //     } else {
+        //         high = mid;
+        //     }
+        // }
+        // return low;
 
     }
 }
