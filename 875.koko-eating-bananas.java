@@ -6,31 +6,63 @@
 
 // @lc code=start
 class Solution {
-    public int minEatingSpeed(int[] piles, int h) {
+    public int revision(int[] piles,int h){
         int n=piles.length;
-        int max=0;
+        int low=1;
+        int high=0;
         for(int i=0;i<n;i++){
-            if(piles[i]>max){
-                max=piles[i];
+            if(piles[i]>high){
+                high=piles[i];
             }
         }
 
-        int low=1;
-        int high=max;
-        while(low<=high){
+        while(low<high){
             int mid=low+(high-low)/2;
-            long hours=0;
+
+            int hours=0;
             for(int i=0;i<n;i++){
                 hours+=Math.ceilDiv(piles[i], mid);
             }
             if(hours>h){
                 low=mid+1;
-
-            }else {
-                high=mid-1;
+            }else{
+                high=mid;
             }
+
         }
         return low;
+
+
+
+    }
+    public int minEatingSpeed(int[] piles, int h) {
+       
+        return revision(piles,h);
+       
+        // int n=piles.length;
+        // int max=0;
+        // for(int i=0;i<n;i++){
+        //     if(piles[i]>max){
+        //         max=piles[i];
+        //     }
+        // }
+
+        // int low=1;
+        // int high=max;
+        // while(low<=high){
+        //     int mid=low+(high-low)/2;
+        //     long hours=0;
+        //     for(int i=0;i<n;i++){
+        //         hours+=Math.ceilDiv(piles[i], mid);
+        //     }
+        //     if(hours>h){
+        //         low=mid+1;
+
+        //     }else {
+        //         high=mid-1;
+        //     }
+        // }
+        // return low;
     }
 }
 // @lc code=end
