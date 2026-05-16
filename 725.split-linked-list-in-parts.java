@@ -65,15 +65,13 @@ class Solution {
                 pointer = pointer.next;
 
             }
-            if (pointer != null) {
-                if (pointer.next != null) {
+            
+                if (pointer != null) {
                     next = pointer.next;
                     pointer.next = null;
                     pointer = next;
-                } else {
-                    pointer = null;
-                }
-            }
+                } 
+            
 
             // previous.next = null;
 
